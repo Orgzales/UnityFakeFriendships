@@ -18,3 +18,7 @@ Step 0:
 	- 🗸 Make scripts, prefabs, assests, scene, and Gameobject for testing
 	- 🗸 Made two scripts to test the mechanic out of cuffing your friend while running for exit
 	
+	
+DEV NOTES:
+		- When too many scripts for different item mechanics are made, amke a mechanices folder"""
+		
