@@ -17,8 +17,11 @@ You know how you're in a scray game and the monster is chasing you and you're fi
 Step 0:
 	- 🗸 Make scripts, prefabs, assests, scene, and Gameobject for testing
 	- 🗸 Made two scripts to test the mechanic out of cuffing your friend while running for exit
+	- 🗸 When a monster comes to close to a player they stop moving 
+	- 🗸 Players want to eb moving to the exit all times
+	- When the player hits the exit, they escape and disaapear 
 	
 	
 DEV NOTES:
 		- When too many scripts for different item mechanics are made, amke a mechanices folder"""
-		
+	

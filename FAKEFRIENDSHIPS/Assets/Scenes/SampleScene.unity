@@ -147,6 +147,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 548484749}
   closest_Exit: {fileID: 391348234}
+  Death: 0
+  monster: {fileID: 1863903156}
   playerSpeed: 1
 --- !u!1 &705507993
 GameObject:
@@ -599,6 +601,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1038226597}
   closest_Exit: {fileID: 391348234}
+  Death: 0
+  monster: {fileID: 1863903156}
   playerSpeed: 1
 --- !u!1 &1863903156
 GameObject:
