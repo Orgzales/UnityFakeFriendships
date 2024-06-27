@@ -123,6 +123,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &391348234 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6889616016290685047, guid: 8b22401b79961334c8961f9d1fcbbe9c, type: 3}
+  m_PrefabInstance: {fileID: 6889616016100991101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &548484749 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7956859157788572765, guid: 0283b33b6f6537349a714e762422b61c, type: 3}
+  m_PrefabInstance: {fileID: 912117639}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &548484750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548484749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaffca482a38cd6418997a007b46a773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 548484749}
+  closest_Exit: {fileID: 391348234}
+  playerSpeed: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -555,6 +580,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!1 &1038226597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7956859157788572765, guid: 0283b33b6f6537349a714e762422b61c, type: 3}
+  m_PrefabInstance: {fileID: 5510191857854262877}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1038226598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038226597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaffca482a38cd6418997a007b46a773, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1038226597}
+  closest_Exit: {fileID: 391348234}
+  playerSpeed: 1
 --- !u!1 &1863903156
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,8 +612,9 @@ GameObject:
   - component: {fileID: 1863903159}
   - component: {fileID: 1863903158}
   - component: {fileID: 1863903157}
+  - component: {fileID: 1863903161}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Monster
   m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -651,6 +697,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1863903161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863903156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974e5aea31b8dd746b98d8562eb55d13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster: {fileID: 1863903156}
+  closest_target: {fileID: 0}
+  mosnterSpeed: 2
 --- !u!1 &1909725387
 GameObject:
   m_ObjectHideFlags: 0
