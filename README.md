@@ -13,3 +13,8 @@ You know how you're in a scray game and the monster is chasing you and you're fi
 	- Make a chain item asset + item that chain can connect to
 	- Make player 1 grab chain item
 	- When player two get close to player 1 he chains him to an objectg near by if it's chain able 
+	
+Step 0:
+	- 🗸 Make scripts, prefabs, assests, scene, and Gameobject for testing
+	- 🗸 Made two scripts to test the mechanic out of cuffing your friend while running for exit
+	
