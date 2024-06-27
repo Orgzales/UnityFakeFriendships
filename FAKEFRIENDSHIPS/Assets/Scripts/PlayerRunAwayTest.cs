@@ -7,6 +7,8 @@ public class PlayerRunAwayTest : MonoBehaviour
 
     public GameObject player;
     public GameObject closest_Exit;
+    public bool Death = false;
+    public GameObject monster;
 
     public float playerSpeed = 1.0f;
 
@@ -33,6 +35,18 @@ public class PlayerRunAwayTest : MonoBehaviour
     {
         //have players move to the cloest exit
         player.transform.position = Vector3.MoveTowards(player.transform.position, closest_Exit.transform.position, playerSpeed * Time.deltaTime);
+
+        //if player is touched by monster = true -  then Death is true
+        if (Vector3.Distance(player.transform.position, monster.transform.position) < 1.0f)
+        {
+            Death = true;
+        }
+
+        if (Death == true)
+        {
+            playerSpeed = 0;
+        }
+
 
     }
 }
