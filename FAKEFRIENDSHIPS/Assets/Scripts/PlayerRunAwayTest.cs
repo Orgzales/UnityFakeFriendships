@@ -33,9 +33,11 @@ public class PlayerRunAwayTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //have players move to the cloest exit
-        player.transform.position = Vector3.MoveTowards(player.transform.position, closest_Exit.transform.position, playerSpeed * Time.deltaTime);
-
+        if (Death == false)
+        {
+            //have players move to the cloest exit
+            player.transform.position = Vector3.MoveTowards(player.transform.position, closest_Exit.transform.position, playerSpeed * Time.deltaTime);
+        }
         //if player is touched by monster = true -  then Death is true
         if (Vector3.Distance(player.transform.position, monster.transform.position) < 1.0f)
         {
