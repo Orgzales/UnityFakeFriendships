@@ -20,6 +20,8 @@ Step 0:
 	- 🗸 When a monster comes to close to a player they stop moving 
 	- 🗸 Players want to eb moving to the exit all times
 	- When the player hits the exit, they escape and disaapear 
+	- Make some obsticles and players colliders 
+	- Get some debugs for organization
 	
 	
 DEV NOTES:
