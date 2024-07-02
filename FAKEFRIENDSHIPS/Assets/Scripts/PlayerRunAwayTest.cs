@@ -42,6 +42,7 @@ public class PlayerRunAwayTest : MonoBehaviour
         if (Vector3.Distance(player.transform.position, monster.transform.position) < 1.0f)
         {
             Death = true;
+            Debug.Log("Player is dead");
         }
 
         if (Death == true)
