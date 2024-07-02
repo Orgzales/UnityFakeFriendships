@@ -10,9 +10,15 @@ public class CuffingMechanitc : MonoBehaviour
 
     public GameObject owned_player;
 
+    // Get all players
+    public GameObject[] players;
+    public GameObject closestPlayer = null;
+    public float closestDistance = Mathf.Infinity;
+
     // Start is called before the first frame update
     void Start()
     {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         cuff = this.gameObject;
     }
 
@@ -33,22 +39,44 @@ public class CuffingMechanitc : MonoBehaviour
         if (picked_up == true)
         {
             cuff.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+            // Find the closest player only once later but have to make a better late update system
+            Findcloestplayer();
+            cuffPlayertoPillar();
         }
-
-
     }
 
     void cuffPlayertoPillar()
     {
-        //when owned player gets closed to another player, they cuff them
-        if (Vector3.Distance(owned_player.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 1.0f)
+        //change this to be a chain ball later but need to attach to another pillar
+        //when owned player gets closed to another player, they cuff the other player
+
+        // If the closest player is within range
+        if (closestPlayer != null && closestDistance < 2.0f)
         {
             Debug.Log("Player cuffed another player");
-            //set other player speed to 0 and set the cuff to their position
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerRunAwayTest>().playerSpeed = 0;
-            cuff.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
+            // Set other player's speed to 0 and set the cuff to their position
+            closestPlayer.GetComponent<PlayerRunAwayTest>().playerSpeed = 0;
+            cuff.transform.position = closestPlayer.transform.position;
         }
     }
+
+    void Findcloestplayer()
+    {
+        // Find the closest player that is not the owned player
+        foreach (GameObject player in players)
+        {
+            if (player != owned_player)
+            {
+                float distance = Vector3.Distance(owned_player.transform.position, player.transform.position);
+                if (distance < closestDistance)
+                {
+                    closestDistance = distance;
+                    closestPlayer = player;
+                }
+            }
+        }
+    }
+
 
 
 }
