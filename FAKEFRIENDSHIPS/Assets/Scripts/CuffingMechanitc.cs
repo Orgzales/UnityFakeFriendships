@@ -4,79 +4,66 @@ using UnityEngine;
 
 public class CuffingMechanitc : MonoBehaviour
 {
-
     public GameObject cuff;
     public bool picked_up = false;
-
     public GameObject owned_player;
-
-    // Get all players
-    public GameObject[] players;
-    public GameObject closestPlayer = null;
-    public float closestDistance = Mathf.Infinity;
+    public float pickUpRadius = 1.0f;
+    public float cuffRadius = 2.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         cuff = this.gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //when a object tagged player is close to this cuff, that cuff will follow player and is picked up
-        if (Vector3.Distance(cuff.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < 1.0f)
+        if (!picked_up)
         {
-            if (picked_up == false)
-            {
-                Debug.Log("Cuff is picked up");
-                picked_up = true;
-                owned_player = GameObject.FindGameObjectWithTag("Player");
-            }
+            PickupCuff();
         }
-
-        if (picked_up == true)
+        else
         {
-            cuff.transform.position = GameObject.FindGameObjectWithTag("Player").transform.position;
-            // Find the closest player only once later but have to make a better late update system
-            Findcloestplayer();
-            cuffPlayertoPillar();
+            Followplayer();
+            CuffOtherplayer();
         }
     }
 
-    void cuffPlayertoPillar()
+    void PickupCuff()
     {
-        //change this to be a chain ball later but need to attach to another pillar
-        //when owned player gets closed to another player, they cuff the other player
-
-        // If the closest player is within range
-        if (closestPlayer != null && closestDistance < 2.0f)
+        if (Vector3.Distance(cuff.transform.position, GameObject.FindGameObjectWithTag("Player").transform.position) < pickUpRadius)
         {
-            Debug.Log("Player cuffed another player");
-            // Set other player's speed to 0 and set the cuff to their position
-            closestPlayer.GetComponent<PlayerRunAwayTest>().playerSpeed = 0;
-            cuff.transform.position = closestPlayer.transform.position;
+
+            Debug.Log("Cuff is picked up");
+            picked_up = true;
+            owned_player = GameObject.FindGameObjectWithTag("Player");
         }
     }
 
-    void Findcloestplayer()
+    void Followplayer()
     {
-        // Find the closest player that is not the owned player
+        if (owned_player != null)
+        {
+            cuff.transform.position = owned_player.transform.position;
+        }
+    }
+
+    void CuffOtherplayer()
+    {
+        GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject player in players)
         {
-            if (player != owned_player)
+            if (player != owned_player && Vector3.Distance(owned_player.transform.position, player.transform.position) < cuffRadius)
             {
-                float distance = Vector3.Distance(owned_player.transform.position, player.transform.position);
-                if (distance < closestDistance)
-                {
-                    closestDistance = distance;
-                    closestPlayer = player;
-                }
+                Debug.Log("Player cuffed another player");
+                // Move the cuff to the other player's position
+                player.GetComponent<PlayerRunAwayTest>().playerSpeed = 0.0f;
+                cuff.transform.position = player.transform.position;
+                break;
             }
         }
     }
-
 
 
 }
