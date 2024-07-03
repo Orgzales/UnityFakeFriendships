@@ -6,6 +6,7 @@ public class CuffingMechanitc : MonoBehaviour
 {
     public GameObject cuff;
     public bool picked_up = false;
+    public bool used_item = false;
     public GameObject owned_player;
     public float pickUpRadius = 1.0f;
     public float cuffRadius = 2.0f;
@@ -19,15 +20,20 @@ public class CuffingMechanitc : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!picked_up)
+        if (!used_item)
         {
-            PickupCuff();
+            if (!picked_up)
+            {
+                PickupCuff();
+            }
+            else
+            {
+                Followplayer();
+                CuffOtherplayer();
+            }
         }
-        else
-        {
-            Followplayer();
-            CuffOtherplayer();
-        }
+
+
     }
 
     void PickupCuff()
@@ -60,6 +66,7 @@ public class CuffingMechanitc : MonoBehaviour
                 // Move the cuff to the other player's position
                 player.GetComponent<PlayerRunAwayTest>().playerSpeed = 0.0f;
                 cuff.transform.position = player.transform.position;
+                used_item = true;
                 break;
             }
         }
