@@ -68,5 +68,25 @@ public class FPS_Contoller : MonoBehaviour
         {
             playerCamera.transform.localRotation = Quaternion.Euler(playerCamera.transform.localEulerAngles.x - mouseY, 0, 0);
         }
+
+        //when get's near another object "player" and press E debug log will show
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            Cuffplayer();
+        }
     }
+
+    void Cuffplayer()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(playerCamera.transform.position, playerCamera.transform.forward, out hit, 3))
+        {
+            if (hit.collider.tag == "Player")
+            {
+                Debug.Log("Player Cuffed");
+            }
+        }
+
+    }
+
 }
