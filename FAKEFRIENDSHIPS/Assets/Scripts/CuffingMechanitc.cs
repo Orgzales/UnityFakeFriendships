@@ -72,5 +72,17 @@ public class CuffingMechanitc : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            Debug.Log("Player cuffed another player");
+            // Move the cuff to the other player's position
+            collision.gameObject.GetComponent<PlayerRunAwayTest>().playerSpeed = 0.0f;
+            cuff.transform.position = collision.gameObject.transform.position;
+            used_item = true;
+        }
+    }
+
 
 }
