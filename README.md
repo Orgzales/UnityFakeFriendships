@@ -2,7 +2,7 @@
 You know how you're in a scray game and the monster is chasing you and you're firend down the road and he trips and fall distracting the monster as a meal and you escape and laugh as you find it funny that you hear his voice in the background yelling, yeah what if you're the reason why he trip. -> into a game
 
 
-##GOALS for Version 0.0.1 
+## GOALS for Version 0.0.1 
 - 🗸 Goal: Make a system where this monster chases the closet player and attempts to eat them. 
 	- 🗸 Make testing field
 	- 🗸 Make player 3d assets + make monster 3d assets 
@@ -23,7 +23,7 @@ You know how you're in a scray game and the monster is chasing you and you're fi
 	- Have player be spawned in random locations
 	- Have player joining multiplayer more than once
 
-#Step 0:
+# Step 0:
 	- 🗸 Make scripts, prefabs, assets , scene, and Game object for testing
 	- 🗸 Made two scripts to test the mechanic out of cuffing your friend while running for exit
 	- 🗸 When a monster comes to close to a player they stop moving 
@@ -32,8 +32,8 @@ You know how you're in a scray game and the monster is chasing you and you're fi
 	- 🗸 Make some obstacles and players colliders 
 	- 🗸 Get some debugs for organization
 	
-#Step 1:
-	- 🗸 Make a basic first person controller 
+# Step 1:
+ 	- 🗸 Make a basic first person controller 
 	- W/ first person, have monster chase player
 	- Have cuff works within first person mode by pressing "E"
 	- Have a hover icon for other player to chain them
@@ -43,7 +43,7 @@ You know how you're in a scray game and the monster is chasing you and you're fi
 	- Have player chain to another pillar
 	-  Vise Versa 
 	- Once player has been chained to pillar, they can move around within set radius 
-#Step 2: 
+# Step 2: 
 	- Once scripts have been figured out and organize start multiplayer
 	- Find way to have connections through multiplayer 
 	- May have to build APK
@@ -54,6 +54,6 @@ You know how you're in a scray game and the monster is chasing you and you're fi
 	- Make button scripts based on multiplayer scripts
 
 	
-#DEV NOTES:
+# DEV NOTES:
 		- When too many scripts for different item mechanics are made, make a mechanics folder"""
 	
