@@ -34,7 +34,7 @@ public class RoamingAI : MonoBehaviour
     {
         if(!walkpointset)
         {
-
+            SearchforDest();
         }
         if(walkpointset)
         {
@@ -49,7 +49,14 @@ public class RoamingAI : MonoBehaviour
 
     void SearchforDest()
     {
-        
+        float z = Random.Range(-walkrange, walkrange);
+        float x = Random.Range(-walkrange, walkrange);
+
+        destinationPoint = new Vector3(transform.position.x + x, transform.position.y, transform.position.z + z);
+        if(Physics.Raycast(destinationPoint, Vector3.down, GroundLayer) )
+        {
+            walkpointset = true;
+        }
     }
 
 }
