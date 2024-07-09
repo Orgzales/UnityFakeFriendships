@@ -3,31 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-GameObject player;
-
-NavMeshAgent agent;
-
-[SerializeField] LayerMask GroundLayer, PlayerLayer;
-
-
-//roaming
-Vector3 destinationPoint;
-bool walkpointset;
-
-[SerializeField] float walkrange; //how far the enemy can walk
 
 public class RoamingAI : MonoBehaviour
 {
+
+    GameObject player;
+
+    NavMeshAgent agent;
+
+    [SerializeField] LayerMask GroundLayer, PlayerLayer;
+
+
+        //roaming
+    Vector3 destinationPoint;
+    bool walkpointset;
+
+    [SerializeField] float walkrange; //how far the enemy can walk
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        agent = GetComponent<NavMeshAgent>();
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        roam(); //random moving AI
     }
 
     void roam()
