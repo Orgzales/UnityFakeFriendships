@@ -34,6 +34,7 @@ You know how you're in a scray game and the monster is chasing you and you're fi
 	
 # Step 1:
  	- 🗸 Make a basic first person controller 
+	- 🗸 Have Monster Roam Randomly
 	- W/ first person, have monster chase player
 	- Have cuff works within first person mode by pressing "E"
 	- Have a hover icon for other player to chain them
