@@ -58,3 +58,5 @@ You know how you're in a scray game and the monster is chasing you and you're fi
 # DEV NOTES:
 		- When too many scripts for different item mechanics are made, make a mechanics folder"""
 		- Flying assests will use circles 
+		- Walking Monsters will use Squares 
+		- Hiding Monsters will use Capsules 
