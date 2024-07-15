@@ -60,3 +60,4 @@ You know how you're in a scray game and the monster is chasing you and you're fi
 		- Flying assests will use circles 
 		- Walking Monsters will use Squares 
 		- Hiding Monsters will use Capsules 
+		- Stalking monsters will be planes 
