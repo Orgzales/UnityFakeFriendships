@@ -45,6 +45,9 @@ You know how you're in a scray game and the monster is chasing you and you're fi
 	-  Vise Versa 
 	- Once player has been chained to pillar, they can move around within set radius 
 # Step 2: 
+	- Make offical testing map and test NPCs
+	- Configure director for spawning levels and classes
+# Step 3:
 	- Once scripts have been figured out and organize start multiplayer
 	- Find way to have connections through multiplayer 
 	- May have to build APK
@@ -53,8 +56,6 @@ You know how you're in a scray game and the monster is chasing you and you're fi
 	- Make small UI for joining in top left screen for now
 	- Button: Host / JOIN host
 	- Make button scripts based on multiplayer scripts
-
-	
 # DEV NOTES:
 		- When too many scripts for different item mechanics are made, make a mechanics folder"""
 		- Flying assests will use circles 
