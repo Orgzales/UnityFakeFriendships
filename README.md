@@ -47,6 +47,9 @@ You know how you're in a scray game and the monster is chasing you and you're fi
 # Step 2: 
 	- Make offical testing map and test NPCs
 	- Configure director for spawning levels and classes
+	- Offically create an place holder prefabs
+	- Clean up all scripts and files
+	- Keep bug check and debug active for now 
 # Step 3:
 	- Once scripts have been figured out and organize start multiplayer
 	- Find way to have connections through multiplayer 
