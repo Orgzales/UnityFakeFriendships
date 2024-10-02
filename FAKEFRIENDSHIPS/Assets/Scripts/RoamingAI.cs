@@ -68,7 +68,7 @@ public class RoamingAI : MonoBehaviour
     void Attack()
     {
         //attack player
-        debug.log("attacking player");
+        Debug.Log("attacking player");
     }
 
     void SearchforDest()

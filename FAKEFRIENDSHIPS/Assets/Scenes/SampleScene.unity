@@ -1789,6 +1789,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestMonster
       objectReference: {fileID: 0}
+    - target: {fileID: 1278412569803512871, guid: 9e3402d3eda23e342a4ac1ec31b60b85, type: 3}
+      propertyPath: sightRange
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278412569803512871, guid: 9e3402d3eda23e342a4ac1ec31b60b85, type: 3}
+      propertyPath: attackRange
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e3402d3eda23e342a4ac1ec31b60b85, type: 3}
 --- !u!1001 &4003719064058126410
