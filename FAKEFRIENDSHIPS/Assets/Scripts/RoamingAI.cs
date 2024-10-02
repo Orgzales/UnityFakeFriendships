@@ -20,8 +20,8 @@ public class RoamingAI : MonoBehaviour
     [SerializeField] float walkrange; //how far the enemy can walk
 
     //state change
-    [SerializeField] float sightRange;
-    bool playerInSight;
+    [SerializeField] float sightRange, attackRange;
+    bool playerInSight, playerinattackrange;
 
 
     // Start is called before the first frame update
@@ -36,9 +36,11 @@ public class RoamingAI : MonoBehaviour
     {
 
         playerInSight = Physics.CheckSphere(transform.position, sightRange, PlayerLayer);
+        playerinattackrange = Physics.CheckSphere(transform.position, attackRange, PlayerLayer);
 
-        roam(); //random moving AI
-        Chase(); //chase player AI
+        if (!playerInSight && !playerinattackrange) roam(); //random moving AI
+        if (playerInSight && !playerinattackrange) Chase(); //chase player AI
+        if (playerInSight && playerinattackrange) Attack(); //attack player AI
     }
 
     void roam()
@@ -61,6 +63,12 @@ public class RoamingAI : MonoBehaviour
     void Chase()
     {
         agent.SetDestination(player.transform.position);
+    }
+
+    void Attack()
+    {
+        //attack player
+        debug.log("attacking player");
     }
 
     void SearchforDest()
